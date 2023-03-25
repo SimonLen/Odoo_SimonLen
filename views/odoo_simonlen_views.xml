@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="sale_order_template_id" position="after">
+                    <field name="test"/>
+                </field>
+            </field>
+        </record>
+
+        <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//table[@class='table table-sm o_main_table mt-4']" position="before">
+                <div t-if="doc.test">
+                    <strong>Test:</strong>
+                    <p class="m-0" t-field="doc.test"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
