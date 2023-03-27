@@ -12,7 +12,7 @@
         </record>
 
         <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
-            <xpath expr="//table[@class='table table-sm o_main_table mt-4']" position="before">
+            <xpath expr="//table" position="before">
                 <div t-if="doc.test">
                     <strong>Test:</strong>
                     <p class="m-0" t-field="doc.test"/>
